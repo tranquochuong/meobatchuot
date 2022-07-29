@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mèo bắt Chuột</title>
+</head>
+<body>
+    <script>
+        class chuot{
+            tragthai;
+            amthanh_chuot;
+            constructor( ten, cannang, tocdo){
+                this.ten_chuot = ten;
+                this.cannang_chuot = cannang;
+                this.tocdo_chuot= tocdo;
+            }
+        gettrangthai(){
+                if(this.trangthai){
+                    alert("chuột sống");
+                } else 
+                alert("chuột chết");
+            }    
+        Chet() {
+            return this.tragthai = false;
+        }
+        song(){
+            return this.tragthai = true;
+        }
+        hoatdongchuot(amthanh){
+            this.amthanh_chuot = amthanh;
+            alert(this.amthanh_chuot)
+        }
+    }
+        class meo{
+            amthanh_meo;
+            constructor( ten, cannang, tocdo, chuot){
+                this.ten_meo = name;
+                this.cannang_meo = cannang;
+                this.tocdo_meo = tocdo;
+                this.chuot = chuot;
+        }
+        getcannangMeo(){
+                return this.cannang_meo;
+        }
+        setAmthanhMeo(amthanh_meo){
+                this.amthanh_meo = amthanh_meo;
+        }
+        getAmthanhMeo(){
+                alert(this.amthanh_meo);
+        }
+        hoatdongmeo(amthanh){
+                this.amthanh_meo= amthanh;
+                alert(this.amthanh_meo);
+        }
+        batchuot(){
+        if(this.chuot.tocdo_chuot < this.tocdo_meo){
+            this.chuot.tragthai = true;
+                alert("Mèo bắt được chuột rồi!");
+            } else{this.chuot.tragthai = false;
+                alert("Chuột đã chạy thoát");
+                
+            }
+        }
+        anchuot(){
+                if(this.chuot.tragthai){
+                    this.cannang_meo = this.cannang_meo + this.chuot.cannang_chuot;
+                    this.chuot.tragthai = true;
+                        alert("Chuột đã bị mèo ăn");
+            }
+        }
+    }
+        let Rat = new chuot("Rat", 10, 100);
+        let Tom = new meo("Tom", 10,190, Rat );
+    Rat.song();
+    Tom.batchuot();
+    Tom.anchuot();
+    alert("Cân nặng của mèo:" + Tom.getcannangMeo());
+
+</script>
+</body>
+</html>
